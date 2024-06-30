@@ -31,10 +31,6 @@ def retrieve_info(query):
 llm = ChatOpenAI(temperature=0, model="gpt-4")
 
 
-#hyperlink not currently matching title of the recommended paper
-#need to work on this
-
-
 
 template = """
 you are a world class biomedical researcher.
