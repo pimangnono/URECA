@@ -7,14 +7,11 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import LLMChain
 from dotenv import load_dotenv
 import re
-import os
 
 load_dotenv()
 
 # 1. Vectorize the abstracts data
-current_dir = os.path.dirname(__file__)
-file_path = os.path.join(current_dir, "GitHub/output.csv")
-loader = CSVLoader(file_path)
+loader = CSVLoader("/Users/pjihae/Documents/GitHub/URECA/output.csv")
 documents = loader.load()
 
 embeddings = OpenAIEmbeddings()
