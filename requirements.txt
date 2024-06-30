@@ -1,6 +1,6 @@
 streamlit
 CSVLoader
-FAISS
+faiss-cpu
 OpenAIEmbeddings
 PromptTemplate
 ChatOpenAI
