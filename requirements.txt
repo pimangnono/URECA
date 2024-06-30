@@ -5,4 +5,4 @@ langchain-community
 faiss-cpu
 python-dotenv
 openai
-CSVLoader
+os
