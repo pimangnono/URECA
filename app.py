@@ -7,16 +7,14 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import LLMChain
 from dotenv import load_dotenv
 import re
-import os 
 
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # 1. Vectorize the abstracts data
 loader = CSVLoader("output.csv")
 documents = loader.load()
 
-embeddings = OpenAIEmbeddings(api_key=openai_api_key)
+embeddings = OpenAIEmbeddings()
 db = FAISS.from_documents(documents, embeddings)
 
 # 2. Function for similarity search
