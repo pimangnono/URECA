@@ -91,14 +91,7 @@ def generate_response(message):
     response = chain.run(message=truncated_message, best_practice=truncated_documents)
     return response
 
-message = "Gene selection is important for cancer classification based on gene expression data, because of high dimensionality and small sample size. In this paper, we present a new gene selection method based on clustering, in which dissimilarity measures are obtained through kernel functions. It searches for best weights of genes iteratively at the same time to optimize the clustering objective function. Adaptive distance is used in the process, which is suitable to learn the weights of genes during the clustering process, improving the performance of the algorithm. The proposed algorithm is simple and does not require any modification or parameter optimization for each dataset. We tested it on eight publicly available datasets, using two classifiers (support vector machine, k-nearest neighbor), compared with other six competitive feature selectors. The results show that the proposed algorithm is capable of achieving better accuracies and may be an efficient tool for finding possible biomarkers from gene expression data."
 
-
-truncated_message = limit_message_length(message)
-result = generate_response(truncated_message)
-print(result)
-
-'''
 # 5. Deploy with Streamlit
 def main():
     st.set_page_config(
@@ -120,6 +113,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-'''
+
 
 # max_token=8192 is for both input+output(response)
