@@ -12,7 +12,8 @@ import os
 load_dotenv()
 
 # Now you can access your environment variables
-openai_api_key = os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+openai_api_key = os.environ["OPENAI_API_KEY"]
 
 # 1. Vectorize the abstracts data
 loader = CSVLoader("output.csv")
