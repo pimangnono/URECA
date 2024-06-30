@@ -11,7 +11,7 @@ import re
 load_dotenv()
 
 # 1. Vectorize the abstracts data
-loader = CSVLoader("/Users/pjihae/Documents/GitHub/URECA/output.csv")
+loader = CSVLoader("output.csv")
 documents = loader.load()
 
 embeddings = OpenAIEmbeddings()
