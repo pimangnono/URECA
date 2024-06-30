@@ -18,7 +18,7 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 loader = CSVLoader("output.csv")
 documents = loader.load()
 
-embeddings = OpenAIEmbeddings(openai_api_key)
+embeddings = OpenAIEmbeddings(api_key=openai_api_key)
 db = FAISS.from_documents(documents, embeddings)
 
 # 2. Function for similarity search
