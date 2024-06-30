@@ -13,8 +13,8 @@ load_dotenv()
 
 # 1. Vectorize the abstracts data
 current_dir = os.path.dirname(__file__)
-loader = os.path.join(current_dir, "GitHub/output.csv")
-# loader = CSVLoader("GitHub/output.csv")
+file_path = os.path.join(current_dir, "GitHub/output.csv")
+loader = CSVLoader(file_path)
 documents = loader.load()
 
 embeddings = OpenAIEmbeddings()
