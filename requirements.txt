@@ -1,5 +1,9 @@
 streamlit
-langchain_community
-langchain_openai
-dotenv
+CSVLoader
+FAISS
+OpenAIEmbeddings
+PromptTemplate
+ChatOpenAI
+LLMChain
+load_dotenv
 re
