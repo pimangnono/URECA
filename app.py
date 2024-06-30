@@ -12,8 +12,7 @@ import os
 load_dotenv()
 
 # Now you can access your environment variables
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
-openai_api_key = os.environ["OPENAI_API_KEY"]
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # 1. Vectorize the abstracts data
 loader = CSVLoader("output.csv")
@@ -43,11 +42,10 @@ you will receive an abstract of literature paper from user.
 your job is to give the most relevant literature paper's title  as a recommendation to the query, along with 2~3 sentences of highlights. 
 you will follow all of the rules below : 
 
-
-1/ give the exact title of the paper with author
-2/ do not recommend the same paper as the user query
-3/ if the user query is not found in the list, search on google scholar and find one
-4/ you should not make up the title 
+1/ you should not make up the title 
+2/ give the exact title of the paper with exact name of author from the paper 
+3/ do not recommend the same paper as the user query
+4/ if the user query is not found in the list, search on google scholar and find one
 5/ you should only recommend paper that exists and can be searched on google scholar
 
 below is a query for a paper you will get:
